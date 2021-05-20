@@ -1,4 +1,5 @@
 <h1 align="center">
+<p>Getting started with</p>
   Go Programming Language
 </h1>
 
@@ -6,11 +7,21 @@
 
 1. [Commands](#commands)
 
-## 🚀 Commands
+### 🚀 Commands
 
 ```
 # Finds main.go and executes it
 go run .
+```
+
+```
+# Creates a module
+go mod init example.com/hello)
+```
+
+```
+# Reroutes location of module
+go mod edit -replace=example.com/greetings=../greetings
 ```
 
 ```
