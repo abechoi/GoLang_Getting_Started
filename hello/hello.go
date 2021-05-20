@@ -19,11 +19,12 @@ func main() {
 	// 0 disables timestamps for errors
 	log.SetFlags(0)
 
-	// Request a greeting message
-	message, err := greetings.Hello("")
+	message, err := greetings.Hello("Abe")
+	// If there is an error, print error message and exit
 	if err != nil {
 		log.Fatal(err)
 	}
+	// Else, print message
 	fmt.Println(message)
 
 }

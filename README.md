@@ -6,8 +6,9 @@
 ### Table of Contents
 
 1. [Commands](#commands)
+2. [Data Structures](#data-structures)
 
-### 🚀 Commands
+### 🚀 1. Commands
 
 ```
 # Finds main.go and executes it
@@ -16,15 +17,27 @@ go run .
 
 ```
 # Creates a module
-go mod init example.com/hello)
+go mod init example.com/hello
 ```
 
 ```
-# Reroutes location of module
+# Edit and replaces location of module
 go mod edit -replace=example.com/greetings=../greetings
 ```
 
 ```
 # Downloads and imports all external packages
 go mod tidy
+```
+
+### 🚀 1. Data Structures
+
+```
+# array
+var a [4]int
+```
+
+```
+# slice
+s := []int{0, 1, 2, 3}
 ```
