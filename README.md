@@ -7,6 +7,7 @@
 
 1. [Commands](#commands)
 2. [Data Structures](#data-structures)
+3. [Compile & Install](#compile-and-install)
 
 ### 🚀 1. Commands
 
@@ -30,7 +31,7 @@ go mod edit -replace=example.com/greetings=../greetings
 go mod tidy
 ```
 
-### 🚀 1. Data Structures
+### 🚀 2. Data Structures
 
 ```
 # array
@@ -40,4 +41,23 @@ var a [4]int
 ```
 # slice
 s := []int{0, 1, 2, 3}
+```
+
+### 🚀 3. Compile and Install
+
+```
+# go to hello directory and build the app
+go build
+
+# discover install path
+go list -f '{{.Target}}'
+
+# go to ~ and export path to directory, exclude app name
+export PATH=$PATH:/Users/me/go/bin
+
+# install
+go install
+
+# execute app
+hello
 ```

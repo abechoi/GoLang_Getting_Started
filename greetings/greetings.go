@@ -3,6 +3,7 @@ package greetings
 import (
 	"errors"
 	"fmt"
+	"log"
 	"math/rand"
 	"time"
 )
@@ -22,7 +23,7 @@ func Hello(name string) (string, error) {
 	return message, nil
 }
 
-func Hellos(names []string) (map[string]string, error) {
+func Hellos(names []string) map[string]string {
 
 	// Make a map of strings
 	messages := make(map[string]string)
@@ -30,15 +31,19 @@ func Hellos(names []string) (map[string]string, error) {
 	for _, name := range names {
 		message, err := Hello(name)
 		if err != nil {
-			return nil, err
+			messages[name] = err.Error()
+		} else {
+			messages[name] = message
 		}
-		messages[name] = message
+
 	}
-	return messages, nil
+	return messages
 }
 
 func init() {
 	rand.Seed(time.Now().UnixNano())
+	log.SetPrefix("greetings: ")
+	log.SetFlags(0)
 }
 
 // functions with lowercased initials can only be used locally.

@@ -21,12 +21,9 @@ func main() {
 	log.SetFlags(0)
 
 	// A slice of names
-	names := []string{"Abe", "Choi", "Jong-Hae"}
+	names := []string{"Abe", "", "Jong-Hae"}
 
-	messages, err := greetings.Hellos(names)
-	if err != nil {
-		log.Fatal(err)
-	}
+	messages := greetings.Hellos(names)
 
 	// message, err := greetings.Hello("Abe")
 	// If there is an error, print error message and exit
@@ -34,6 +31,8 @@ func main() {
 	// 	log.Fatal(err)
 	// }
 	// Else, print message
-	fmt.Println(messages)
+	for _, message := range messages {
+		fmt.Println(message)
+	}
 
 }
